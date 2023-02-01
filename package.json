@@ -15,7 +15,7 @@
   ],
   "author": "bhbs <bhbstar.me@gmail.com>",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "files": [
     "dist",
     "types"
