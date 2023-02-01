@@ -1,0 +1,59 @@
+{
+  "name": "opened-tabs",
+  "description": "Get opened tabs information",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhbs/opened-tabs.git"
+  },
+  "homepage": "https://github.com/bhbs/opened-tabs",
+  "bugs": {
+    "url": "https://github.com/bhbs/opened-tabs/issues"
+  },
+  "keywords": [
+    "browser",
+    "tabs"
+  ],
+  "author": "bhbs <bhbstar.me@gmail.com>",
+  "license": "MIT",
+  "version": "0.0.1",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "types": "./types/index.d.ts",
+  "main": "./dist/opened-tabs.cjs.js",
+  "module": "./dist/opened-tabs.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/opened-tabs.es.js",
+      "require": "./dist/opened-tabs.cjs.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "npm run lint:cspell; npm run lint:eslint; npm run lint:prettier",
+    "lint:cspell": "cspell --gitignore '**'",
+    "lint:eslint": "eslint . --ignore-path .gitignore",
+    "lint:prettier": "prettier . --check --ignore-path .gitignore",
+    "fix": "npm run fix:eslint; npm run fix:prettier",
+    "fix:eslint": "eslint . --fix --ignore-path .gitignore",
+    "fix:prettier": "prettier . --write --ignore-path .gitignore",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "@vitest/coverage-c8": "^0.28.3",
+    "cspell": "^6.19.2",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "happy-dom": "^8.2.2",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.5",
+    "vite": "^4.0.4",
+    "vitest": "^0.28.3"
+  }
+}
