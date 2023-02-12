@@ -68,6 +68,7 @@ export class OpenedTabs {
           idTo: idFrom,
           openedAt: OpenedTabs.openedAt,
         });
+        break;
       }
       case "pong": {
         const { idFrom, idTo, openedAt } = event.data;
@@ -77,10 +78,12 @@ export class OpenedTabs {
             openedAt,
           });
         }
+        break;
       }
       case "close": {
         const { idFrom } = event.data;
         OpenedTabs.tabs = OpenedTabs.tabs.filter((tab) => tab.id !== idFrom);
+        break;
       }
     }
   }
