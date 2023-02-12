@@ -40,7 +40,7 @@ export class OpenedTabs {
       broadcastChannel.onmessage = this.handleMessage;
       broadcastChannel.postMessage({
         eventName: "ping",
-        id,
+        idFrom: id,
         openedAt,
       });
       OpenedTabs.id = id;
