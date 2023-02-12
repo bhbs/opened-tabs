@@ -1,3 +1,5 @@
+// @vitest-environment happy-dom
+
 import { describe, test, expect } from "vitest";
 import { OpenedTabs } from "../src/index";
 

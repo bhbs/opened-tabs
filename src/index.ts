@@ -1,5 +1,11 @@
 type Message =
   | {
+      eventName: "close";
+      idFrom: string;
+      idTo: never;
+      openedAt: never;
+    }
+  | {
       eventName: "ping";
       idFrom: string;
       idTo: never;
@@ -25,6 +31,12 @@ export class OpenedTabs {
     broadcastChannel = new BroadcastChannel("OPENED_TABS")
   ) {
     if (!OpenedTabs.id) {
+      window.addEventListener("unload", () => {
+        broadcastChannel.postMessage({
+          eventName: "close",
+          idFrom: id,
+        });
+      });
       broadcastChannel.onmessage = this.handleMessage;
       broadcastChannel.postMessage({
         eventName: "ping",
@@ -61,6 +73,10 @@ export class OpenedTabs {
             openedAt,
           });
         }
+      }
+      case "close": {
+        const { idFrom } = event.data;
+        OpenedTabs.tabs = OpenedTabs.tabs.filter((tab) => tab.id !== idFrom);
       }
     }
   }
