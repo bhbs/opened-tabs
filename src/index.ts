@@ -45,6 +45,10 @@ export class OpenedTabs {
       });
       OpenedTabs.id = id;
       OpenedTabs.openedAt = openedAt;
+      OpenedTabs.tabs.push({
+        id,
+        openedAt,
+      });
       OpenedTabs._broadcastChannel = broadcastChannel;
     }
   }
