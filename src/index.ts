@@ -24,6 +24,7 @@ export class OpenedTabs {
   static id: string;
   static openedAt: Date;
   static tabs: { id: string; openedAt: Date }[] = [];
+  static readonly eventTarget = new EventTarget();
 
   constructor(
     id = window.crypto.randomUUID(),
@@ -86,5 +87,6 @@ export class OpenedTabs {
         break;
       }
     }
+    OpenedTabs.eventTarget.dispatchEvent(new Event("change"));
   }
 }
