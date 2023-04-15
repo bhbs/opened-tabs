@@ -9,5 +9,5 @@ export function registerTab(tabs: OpendTab[], id: string, openedAt: Date) {
 
 export function unregisterTab(tabs: OpendTab[], id: string) {
   const target = tabs.findIndex((tab) => tab.id === id);
-  if (target) tabs.splice(target, 1);
+  if (target !== undefined) tabs.splice(target, 1);
 }
