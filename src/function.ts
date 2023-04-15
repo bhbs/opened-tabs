@@ -1,10 +1,10 @@
 import { postClose, postPing, postPong } from "./message";
 import { registerTab, unregisterTab } from "./tab";
-import { Message, OpendTab } from "./types";
+import { Message, OpenedTab } from "./types";
 
 export function init(
   broadcastChannel: BroadcastChannel,
-  tabs: OpendTab[],
+  tabs: OpenedTab[],
   id: string,
   openedAt: Date,
   eventTarget: EventTarget
@@ -21,7 +21,7 @@ function handleMessage(
   event: MessageEvent<Message>,
   broadcastChannel: BroadcastChannel,
   id: string,
-  tabs: OpendTab[],
+  tabs: OpenedTab[],
   eventTarget: EventTarget
 ) {
   const { eventName } = event.data;

@@ -18,4 +18,4 @@ export type Message =
       openedAt: Date;
     };
 
-export type OpendTab = { id: string; openedAt: Date };
+export type OpenedTab = { id: string; openedAt: Date };

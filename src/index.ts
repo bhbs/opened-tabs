@@ -1,8 +1,8 @@
 import { init } from "./function";
-import { OpendTab } from "./types";
+import { OpenedTab } from "./types";
 
 class _OpenedTabs extends EventTarget {
-  readonly tabs: OpendTab[] = [];
+  readonly tabs: OpenedTab[] = [];
 
   get list() {
     return structuredClone(this.tabs);
