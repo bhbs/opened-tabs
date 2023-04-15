@@ -1,18 +1,17 @@
 import { OpenedTabs } from "opened-tabs";
-import { useCallback, useEffect, useState } from "react";
-
-new OpenedTabs();
+import { useEffect, useState } from "react";
 
 const App = () => {
-  const [tabs, setTabs] = useState([...OpenedTabs.tabs]);
-  const changeTabs = useCallback(() => {
-    setTabs([...OpenedTabs.tabs]);
-  }, [setTabs]);
+  const [tabs, setTabs] = useState(OpenedTabs.list);
 
   useEffect(() => {
-    OpenedTabs.eventTarget.addEventListener("change", changeTabs);
+    OpenedTabs.addEventListener("change", () => {
+      setTabs(OpenedTabs.list);
+    });
     return () => {
-      OpenedTabs.eventTarget.removeEventListener("change", changeTabs);
+      OpenedTabs.removeEventListener("change", () => {
+        setTabs(OpenedTabs.list);
+      });
     };
   }, [setTabs]);
 
