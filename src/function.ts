@@ -10,7 +10,13 @@ export function init(
   eventTarget: EventTarget
 ) {
   broadcastChannel.addEventListener("message", (message) => {
-    handleMessage(message, broadcastChannel, id, tabs, eventTarget);
+    handleMessage(
+      message as MessageEvent<Message>,
+      broadcastChannel,
+      id,
+      tabs,
+      eventTarget
+    );
   });
   registerTab(tabs, id, openedAt);
   postPing(broadcastChannel, id, openedAt);
