@@ -33,11 +33,11 @@
     "build": "tsc && vite build",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "lint": "npm run lint:cspell; npm run lint:eslint; npm run lint:prettier",
+    "lint": "npm run lint:cspell && npm run lint:eslint && npm run lint:prettier",
     "lint:cspell": "cspell --gitignore '**'",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier . --check --ignore-path .gitignore",
-    "fix": "npm run fix:eslint; npm run fix:prettier",
+    "fix": "npm run fix:eslint && npm run fix:prettier",
     "fix:eslint": "eslint . --fix",
     "fix:prettier": "prettier . --write --ignore-path .gitignore"
   },
