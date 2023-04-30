@@ -1,5 +1,11 @@
 # opened-tabs
 
+## 0.1.3
+
+### Patch Changes
+
+- 10e3a4a: fix: return tabs without cloning
+
 ## 0.1.2
 
 ### Patch Changes
