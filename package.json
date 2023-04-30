@@ -3,6 +3,7 @@
   "author": "bhbs <bhbstar.me@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "release": "npm run build && changeset publish",
     "test": "npm run test:opened-tabs",
     "test:opened-tabs": "npm test --workspace packages/opened-tabs -- --run",
     "build": "npm run build:opened-tabs && npm run build:example",
@@ -17,6 +18,7 @@
     "fix:prettier": "prettier . --write --ignore-path .gitignore"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "@vitest/coverage-c8": "^0.30.1",
