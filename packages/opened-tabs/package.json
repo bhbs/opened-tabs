@@ -1,0 +1,37 @@
+{
+  "name": "opened-tabs",
+  "description": "Get opened tabs information",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhbs/opened-tabs.git"
+  },
+  "homepage": "https://github.com/bhbs/opened-tabs/packages/opened-tabs",
+  "bugs": {
+    "url": "https://github.com/bhbs/opened-tabs/issues"
+  },
+  "keywords": [
+    "browser",
+    "tabs"
+  ],
+  "author": "bhbs <bhbstar.me@gmail.com>",
+  "license": "MIT",
+  "version": "0.1.0",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "types": "./types/index.d.ts",
+  "main": "./dist/opened-tabs.cjs.js",
+  "module": "./dist/opened-tabs.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/opened-tabs.es.js",
+      "require": "./dist/opened-tabs.cjs.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  }
+}
