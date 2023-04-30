@@ -26,6 +26,7 @@
   "module": "./dist/opened-tabs.es.js",
   "exports": {
     ".": {
+      "types": "./types/index.d.ts",
       "import": "./dist/opened-tabs.es.js",
       "require": "./dist/opened-tabs.cjs.js"
     }
