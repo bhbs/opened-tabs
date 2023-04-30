@@ -3,7 +3,8 @@
   "description": "Get opened tabs information",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bhbs/opened-tabs.git"
+    "url": "https://github.com/bhbs/opened-tabs.git",
+    "directory": "packages/opened-tabs"
   },
   "homepage": "https://github.com/bhbs/opened-tabs/packages/opened-tabs",
   "bugs": {
