@@ -5,7 +5,7 @@ class _OpenedTabs extends EventTarget {
   readonly tabs: OpenedTab[] = [];
 
   get list() {
-    return structuredClone(this.tabs);
+    return this.tabs;
   }
 }
 
