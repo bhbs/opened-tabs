@@ -8,9 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "opened-tabs": "file:../packages/opened-tabs",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-opened-tabs": "*"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

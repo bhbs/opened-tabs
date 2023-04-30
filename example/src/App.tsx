@@ -1,19 +1,7 @@
-import { OpenedTabs } from "opened-tabs";
-import { useEffect, useState } from "react";
+import { useOpenedTabs } from "react-opened-tabs";
 
 const App = () => {
-  const [tabs, setTabs] = useState(OpenedTabs.list);
-
-  useEffect(() => {
-    OpenedTabs.addEventListener("change", () => {
-      setTabs(OpenedTabs.list);
-    });
-    return () => {
-      OpenedTabs.removeEventListener("change", () => {
-        setTabs(OpenedTabs.list);
-      });
-    };
-  }, [setTabs]);
+  const { tabs } = useOpenedTabs();
 
   return (
     <ul>
