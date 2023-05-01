@@ -29,14 +29,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
-      - uses: actions/cache@v3
+      - uses: actions/cache/restore@v3
         with:
           path: "node_modules"
           key: node_modules-${{ hashFiles('package-lock.json') }}
-      - name: Run Build
-        run: npm run build
-      - name: Run Test
-        run: npm test
+      - run: npm run build
+      - run: npm test
 
   run-lint:
     name: Lint
@@ -47,11 +45,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
-      - uses: actions/cache@v3
+      - uses: actions/cache/restore@v3
         with:
           path: "node_modules"
           key: node_modules-${{ hashFiles('package-lock.json') }}
-      - name: Run Build
-        run: npm run build
-      - name: Run Lint
-        run: npm run lint
+      - run: npm run build
+      - run: npm run lint
