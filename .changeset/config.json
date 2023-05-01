@@ -1,5 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
+  "updateInternalDependencies": "patch",
   "commit": true,
   "access": "public",
   "changelog": "@changesets/cli/changelog",
